@@ -17,7 +17,7 @@ import { Component } from '@angular/core';
                  id="new-color-input" 
                  name="newColor"
                 [(ngModel)]="newColor">
-          <button type="button" (click)="addColor($)">Add color</button>
+          <button type="button" (click)="addColor()">Add color</button>
         </div>
       </form>
     </div>
