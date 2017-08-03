@@ -1,38 +1,36 @@
-import { Component } from '@angular/core';
+import {Component, Pipe, PipeTransform} from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: `
-    <div>
-      <h1>{{header}}</h1>
-      <ul>
-        <li *ngFor="let line of lines">
-        {{line}}
-        </li>
-      </ul>
-      <form>
-        <div>
-          <label for="new-color-input">New Color:</label>
-          <input type="text" 
-                 id="new-color-input" 
-                 name="newColor"
-                [(ngModel)]="newColor">
-          <button type="button" (click)="addColor()">Add color</button>
-        </div>
-      </form>
-    </div>
-  `,
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   public header: string = "app with new header";
   public lines : string[] = [
-    "red", "white", "blue"
+    "red", "white", "blue",
   ];
   public newColor: string = "";
+  public randomNumber: number;
+  public randomDate: Date;
 
   public addColor(): void {
     this.lines.push(this.newColor);
   }
+
+  public addNumber(): void {
+
+  }
 }
+
+@Pipe({
+  name: 'capitalize'
+})
+export class CapitalizePipe implements PipeTransform {
+  transform(value: any, ...args: any[]): any {
+    const stringValue = value.toString();
+    return stringValue.slice(0, stringValue.length - 1)+ stringValue.charAt(stringValue.length - 1).toUpperCase();
+  }
+}
+
 

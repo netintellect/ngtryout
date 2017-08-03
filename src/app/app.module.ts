@@ -2,13 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from "@angular/forms";
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
-import '../styles/site.css';
+import {AppComponent, CapitalizePipe} from './app.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CapitalizePipe
   ],
   imports: [
     BrowserModule,
