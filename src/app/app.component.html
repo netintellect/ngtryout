@@ -10,16 +10,21 @@
     </li>
   </ul>
   <form>
-    <div>
-      <label for="new-color-input">New Color:</label>
+    <div class="row">
+      <label for="new-color-input"
+             class="col-2">New Color:</label>
       <input type="text"
+             class="col-3 mb-3"
              id="new-color-input"
              name="newColor"
              [(ngModel)]="newColor">
+    </div>
+    <div class="row offset-4 col-1 mr-5">
       <button type="button"
               class="btn btn-primary btn-sm"
               (click)="addColor()"
-              (keyup.enter)="addColor()">Add color</button>
+              (keyup.enter)="addColor()">Add color
+      </button>
     </div>
   </form>
   <h3>Numbers</h3>
@@ -33,7 +38,8 @@
              [(ngModel)]="randomNumber">
       <button type="button"
               (click)="addNumber()"
-              (keyup.enter)="addNumber()">Add color</button>
+              (keyup.enter)="addNumber()">Add color
+      </button>
     </div>
   </form>
   <h3>Dates</h3>

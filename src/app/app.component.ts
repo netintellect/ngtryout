@@ -1,9 +1,10 @@
 import {Component, Pipe, PipeTransform} from '@angular/core';
+import {Logger} from "./services/logger";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   public header: string = "app with new header";
@@ -14,7 +15,12 @@ export class AppComponent {
   public randomNumber: number;
   public randomDate: Date;
 
+  constructor(private logger: Logger) {
+
+  }
+
   public addColor(): void {
+    this.logger.log("Enter");
     this.lines.push(this.newColor);
   }
 
@@ -32,5 +38,3 @@ export class CapitalizePipe implements PipeTransform {
     return stringValue.slice(0, stringValue.length - 1)+ stringValue.charAt(stringValue.length - 1).toUpperCase();
   }
 }
-
-

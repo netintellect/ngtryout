@@ -3,6 +3,7 @@ import {FormsModule} from "@angular/forms";
 import { NgModule } from '@angular/core';
 
 import {AppComponent, CapitalizePipe} from './app.component';
+import {Logger} from "./services/logger";
 
 
 @NgModule({
@@ -14,7 +15,7 @@ import {AppComponent, CapitalizePipe} from './app.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ Logger ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
