@@ -1,6 +1,6 @@
 import {Inject, Injectable} from "@angular/core";
 import {Logger} from "./logger";
-import {APP_SETTINGS, AppSettings} from "../settings/settings";
+import {AppSettingsToken, AppSettings} from "../settings/settings";
 
 @Injectable()
 export class ColorService {
@@ -10,7 +10,7 @@ export class ColorService {
 
   //#region behavior
   constructor(private logger: Logger,
-              @Inject(APP_SETTINGS) private appSettings: AppSettings) {
+              @Inject(AppSettingsToken) private appSettings: AppSettings) {
     this.addColor("red");
     this.addColor( "blue");
     this.addColor( "orange");
