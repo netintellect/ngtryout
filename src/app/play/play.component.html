@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col">
+    <h1>{{header}}</h1>
+
+    <h3>Colors</h3>
+    <ul>
+      <li *ngFor="let color of colors">
+        {{color | capitalize }}
+      </li>
+    </ul>
+    <form>
+      <div class="row">
+        <label for="new-color-input"
+               class="col-2">New Color:</label>
+        <input type="text"
+               class="col-3 mb-3"
+               id="new-color-input"
+               name="newColor"
+               [(ngModel)]="newColor">
+      </div>
+      <div class="row offset-4 col-1 mr-5">
+        <button type="button"
+                class="btn btn-primary btn-sm"
+                (click)="addColor()"
+                (keyup.enter)="addColor()">Add color
+        </button>
+      </div>
+    </form>
+    <h3>Numbers</h3>
+    <span>Number: {{ randomNumber | number:'2.2-3'}}</span>
+    <form>
+      <div>
+        <label for="new-number-input">New Number:</label>
+        <input type="text"
+               id="new-number-input"
+               name="newNumber"
+               [(ngModel)]="randomNumber">
+        <button type="button"
+                (click)="addNumber()"
+                (keyup.enter)="addNumber()">Add color
+        </button>
+      </div>
+    </form>
+    <h3>Dates</h3>
+    <span>Date: {{ randomDate | date:'dd/MM/yyyy'}}</span>
+    <form>
+      <div>
+        <label for="new-date-input">New Number:</label>
+        <input type="text"
+               id="new-date-input"
+               name="newDate"
+               [(ngModel)]="randomDate">
+      </div>
+    </form>
+  </div>
+</div>
