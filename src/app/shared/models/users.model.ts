@@ -6,7 +6,9 @@ export class User {
     public dateOfBirth: Date,
     public address: string,
     public zipCode: string,
+    public email: string,
+    public company: string,
     public newsLetter?: boolean,
-    public gender?: string
+    public gender?: string,
   ) {}
 }
