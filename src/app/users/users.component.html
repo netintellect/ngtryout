@@ -67,6 +67,21 @@
                    name="email"
                    [(ngModel)]="model.email"/>
           </div>
+          <!-- phone -->
+          <div class="k-form-field">
+            <label [for]="phone">
+              Phone <span class="k-required">*</span>
+            </label>
+            <input #phone="ngModel" class="k-textbox"
+                   phone
+                   placeholder="Your Phone"
+                   name="phone"
+                   [(ngModel)]="model.phone"/>
+            <span *ngIf="phone.errors?.phoneNumber"
+                  class="card alert-danger p-1 mt-1">
+              <span class="k-icon k-i-info"></span> Geen geldig telefoon nummer!
+            </span>
+          </div>
           <!-- company -->
           <div class="k-form-field">
             <label [for]="company">

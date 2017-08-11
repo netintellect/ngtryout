@@ -2,6 +2,7 @@ import {Component, Inject, Input, OnChanges, OnInit, SimpleChanges} from '@angul
 import {User} from "../shared/models/user.model";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Credentials} from "../shared/models/credentials.model";
+import {phoneNumberValidator} from "../shared/validators/phone.validator";
 
 @Component({
   moduleId: module.id,
@@ -34,8 +35,10 @@ export class CredentialsComponent
   public buildForm(): void {
     this.credentialsForm = this.formBuilder.group({
       "authentication": this.formBuilder.group({
-        "userName": ["", [Validators.required]],
-        "password": ["", [Validators.required]]
+        "userName": ["", [Validators.required, Validators.minLength(2)]],
+        "password": ["", [Validators.required, Validators.minLength(12)]],
+        "phone": ["", [phoneNumberValidator()]],
+        "isAuthenticated": [false, [Validators.required]]
       })
     })
   }
@@ -43,6 +46,7 @@ export class CredentialsComponent
   public save(): void {
     this.model.userName = this.credentialsForm.get("authentication.userName").value;
     this.model.password = this.credentialsForm.get("authentication.password").value;
+    this.model.isAuthenticated = this.credentialsForm.get("authentication.isAuthenticated").value;
   }
 
   public reset(): void {

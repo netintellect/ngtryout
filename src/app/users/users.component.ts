@@ -42,9 +42,6 @@ export class UsersComponent implements OnInit, OnChanges {
       "",
       "",
       "",
-      "",
-      true,
-      ""
     );
   }
 

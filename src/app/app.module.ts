@@ -12,6 +12,7 @@ import {UsersComponent} from "./users/users.component";
 import {PlayComponent} from "./play/play.component";
 import {DatePickerModule} from "@progress/kendo-angular-dateinputs";
 import {CredentialsComponent} from "./users/credentials.component";
+import {PhoneNumberValidator } from "./shared/validators/phone.directives";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {CredentialsComponent} from "./users/credentials.component";
     UsersComponent,
     CredentialsComponent,
     PlayComponent,
-    CapitalizePipe
+    CapitalizePipe,
+    PhoneNumberValidator
   ],
   imports: [
     BrowserModule,

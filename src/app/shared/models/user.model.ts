@@ -1,6 +1,7 @@
 import {Credentials} from "./credentials.model";
 
 export class User {
+  public phone?: string;
   public company?: string;
   public newsLetter?: boolean;
   public gender?: string;
