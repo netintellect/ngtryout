@@ -17,7 +17,7 @@
             <label [for]="firstName">
               First Name<span class="k-required">*</span>
             </label>
-            <input #firstName class="k-textbox"
+            <input #firstName="ngModel" class="k-textbox"
                    required maxlength="50" minlength="2"
                    placeholder="Your Name"
                    name="firstName"
@@ -77,22 +77,6 @@
                    name="company"
                    [(ngModel)]="model.company" />
           </div>
-        </fieldset>
-
-        <fieldset ngModelGroup="CredentialsInfo">
-          <legend>Credentials</legend>
-          <label class="k-form-field">
-            <span>Username</span>
-            <input class="k-textbox" value="bbatista" placeholder="Your username"/>
-          </label>
-          <label class="k-form-field">
-            <span>Password</span>
-            <input type="password" class="k-textbox" value="123456" placeholder="Your password"/>
-          </label>
-          <label class="k-form-field">
-            <input type="checkbox" id="auth-2fa" class="k-checkbox" checked>
-            <label class="k-checkbox-label" for="auth-2fa">Enable two-factor authentication</label>
-          </label>
         </fieldset>
 
         <div class="text-right">

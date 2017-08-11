@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NgModule } from "@angular/core";
 import {LabelModule} from "@progress/kendo-angular-label";
 
@@ -11,11 +11,13 @@ import {AppSettingsToken, AppSettings} from "./settings/settings";
 import {UsersComponent} from "./users/users.component";
 import {PlayComponent} from "./play/play.component";
 import {DatePickerModule} from "@progress/kendo-angular-dateinputs";
+import {CredentialsComponent} from "./users/credentials.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
+    CredentialsComponent,
     PlayComponent,
     CapitalizePipe
   ],
@@ -23,6 +25,7 @@ import {DatePickerModule} from "@progress/kendo-angular-dateinputs";
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     LabelModule,
     DatePickerModule
   ],

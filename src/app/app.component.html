@@ -5,8 +5,15 @@
     </div>
   </div>
   <div class="row">
-    <div class="offset-1 col-sm-11">
-      <app-users-component>Loading...</app-users-component>
+    <div class="offset-1 col-sm-5">
+      <app-users-component [model]="user" >
+        Loading...
+      </app-users-component>
+    </div>
+    <div class="col-sm-5 offset-1">
+      <app-credentials-component [model]="user.credentials">
+        Loading...
+      </app-credentials-component>
     </div>
   </div>
 </div>

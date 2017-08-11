@@ -1,5 +1,5 @@
-import {Component, OnChanges, OnInit, SimpleChanges} from "@angular/core";
-import {User} from "../shared/models/users.model";
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from "@angular/core";
+import {User} from "../shared/models/user.model";
 
 @Component({
   moduleId: module.id,
@@ -9,7 +9,7 @@ import {User} from "../shared/models/users.model";
 })
 export class UsersComponent implements OnInit, OnChanges {
   //#region state
-  public model: User;
+  @Input() public model: User;
   public isReadOnly = true;
   //#endregion
 
@@ -22,7 +22,7 @@ export class UsersComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.model = this.createUser();
+
   }
 
   public saveUser(): void {
@@ -30,7 +30,7 @@ export class UsersComponent implements OnInit, OnChanges {
   }
 
   public reset(): void {
-    this.model = this.createUser();
+    this.model.reset();
   }
 
   private createUser(): User {

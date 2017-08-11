@@ -1,6 +1,7 @@
-import {Component, Pipe, PipeTransform} from '@angular/core';
+import {Component, OnChanges, OnInit, Pipe, PipeTransform, SimpleChanges} from '@angular/core';
 import {Logger} from "./services/logger";
 import {ColorService} from "./services/ColorService";
+import {User} from "./shared/models/user.model";
 
 @Component({
   moduleId: module.id,
@@ -8,7 +9,20 @@ import {ColorService} from "./services/ColorService";
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss']
 })
-export class AppComponent {
+export class AppComponent
+  implements OnInit, OnChanges
+{
+  //#region state
+  public user: User;
+  //#endregion
+  //#region behavior
+  ngOnInit(): void {
+    this.user = User.create();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+  }
+  //#endregion
 }
 
 @Pipe({
