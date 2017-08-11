@@ -39,9 +39,7 @@ export class UsersComponent implements OnInit, OnChanges {
       "",
       "",
       new Date(),
-      "",
-      "",
-      "",
+      ""
     );
   }
 

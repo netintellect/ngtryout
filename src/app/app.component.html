@@ -11,6 +11,9 @@
       </app-users-component>
     </div>
     <div class="col-sm-5 offset-1">
+      <app-address-component [model]="user.address">
+        Loading
+      </app-address-component>
       <app-credentials-component [model]="user.credentials">
         Loading...
       </app-credentials-component>

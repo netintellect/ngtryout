@@ -13,13 +13,16 @@ import {PlayComponent} from "./play/play.component";
 import {DatePickerModule} from "@progress/kendo-angular-dateinputs";
 import {CredentialsComponent} from "./users/credentials.component";
 import {PhoneNumberValidator } from "./shared/validators/phone.directives";
+import {AddressComponent} from "./users/address.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
+    AddressComponent,
     CredentialsComponent,
     PlayComponent,
+
     CapitalizePipe,
     PhoneNumberValidator
   ],

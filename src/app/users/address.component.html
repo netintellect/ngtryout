@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="card col m-1 p-sm-1">
+    <div class="card-block">
+      <form #formAddress
+            (submit)="save()"
+            [formGroup]="addressForm"
+            class="k-form"
+            novalidate>
+        <fieldset>
+          <legend>Address</legend>
+          <!-- street + house number -->
+          <div class="k-form-field">
+            <label [for]="street">
+              Street <span class="k-required">*</span> + HouseNumber <span class="k-field-info">(optioneel)</span>
+            </label>
+            <div class="d-inline-flex">
+              <input #street class="k-textbox"
+                     placeholder="Your street"
+                     formControlName="street"/>
+              <input #houseNumber class="k-textbox w-25 ml-1"
+                     placeholder="Your Housenumber"
+                     formControlName="houseNumber"/>
+            </div>
+            <div class="card alert-danger mt-1 p-1"
+                 *ngIf="addressForm.controls.street.invalid &&
+                  (addressForm.controls.street.dirty ||
+                   addressForm.controls.street.touched)">
+              <div *ngIf="addressForm.controls.street.errors?.required">
+                <span class="k-icon k-i-info mb-1 mr-1"></span>Sorry, but the street is required!
+              </div>
+            </div>
+          </div>
+          <!-- zip code + city -->
+          <div class="k-form-field">
+            <label [for]="zipCode">
+              Zip <span class="k-required">*</span> + City <span class="k-required">*</span>
+            </label>
+            <div class="d-inline-flex">
+              <input #zipCode class="k-textbox w-25"
+                     placeholder="Your ZipCode"
+                     formControlName="zipCode"/>
+              <input #city class="k-textbox ml-1"
+                     placeholder="Your City"
+                     formControlName="city"/>
+            </div>
+            <div class="card alert-danger mt-1 p-1"
+                 *ngIf="addressForm.controls.zipCode.invalid &&
+                  (addressForm.controls.zipCode.dirty ||
+                   addressForm.controls.zipCode.touched)">
+              <div *ngIf="addressForm.controls.zipCode.errors?.required">
+                <span class="k-icon k-i-info mb-1 mr-1"></span>Sorry, but the zip code is required!
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <div class="text-right">
+          <button type="button"
+                  class="k-button"
+                  (click)="reset()"
+                  [disabled]="!formAddress.dirty && formAddress.untouched">
+            Cancel
+          </button>
+          <button type="submit"
+                  class="k-button k-primary"
+                  [disabled]="formAddress.invalid">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

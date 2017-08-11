@@ -1,4 +1,5 @@
 import {Credentials} from "./credentials.model";
+import {Address} from "./address.model";
 
 export class User {
   public phone?: string;
@@ -6,13 +7,12 @@ export class User {
   public newsLetter?: boolean;
   public gender?: string;
   public credentials: Credentials = new Credentials("", "");
+  public address: Address = new Address("", "", "");
 
   constructor(public id: number,
               public firstName: string,
               public lastName: string,
               public dateOfBirth: Date,
-              public address: string,
-              public zipCode: string,
               public email: string,
         ) {
   }
@@ -23,23 +23,21 @@ export class User {
       "",
       "",
       new Date(),
-      "",
-      "",
       ""
     );
   }
 
   reset() {
     this.id = 0,
-      this.firstName = "";
+    this.firstName = "";
     this.lastName = "";
     this.dateOfBirth = new Date();
-    this.address = "";
-    this.zipCode = "";
+    this.address = new Address("", "", "", "");
     this.email = "";
     this.company = "";
     this.newsLetter = null;
     this.gender = null;
+    this.credentials = new Credentials("", "");
   }
 }
 
