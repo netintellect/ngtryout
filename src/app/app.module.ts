@@ -14,6 +14,7 @@ import {DatePickerModule} from "@progress/kendo-angular-dateinputs";
 import {CredentialsComponent} from "./users/credentials.component";
 import {PhoneNumberValidator } from "./shared/validators/phone.directives";
 import {AddressComponent} from "./users/address.component";
+import {DropDownsModule} from "@progress/kendo-angular-dropdowns";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,6 @@ import {AddressComponent} from "./users/address.component";
     AddressComponent,
     CredentialsComponent,
     PlayComponent,
-
     CapitalizePipe,
     PhoneNumberValidator
   ],
@@ -32,7 +32,8 @@ import {AddressComponent} from "./users/address.component";
     FormsModule,
     ReactiveFormsModule,
     LabelModule,
-    DatePickerModule
+    DatePickerModule,
+    DropDownsModule
   ],
   providers: [
     { provide: Logger, useClass: Logger},
