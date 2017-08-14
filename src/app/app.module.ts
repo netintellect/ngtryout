@@ -15,6 +15,7 @@ import {CredentialsComponent} from "./users/credentials.component";
 import {PhoneNumberValidator } from "./shared/validators/phone.directives";
 import {AddressComponent} from "./users/address.component";
 import {DropDownsModule} from "@progress/kendo-angular-dropdowns";
+import {SnotifyModule, SnotifyService} from "ng-snotify";
 
 @NgModule({
   declarations: [
@@ -33,12 +34,14 @@ import {DropDownsModule} from "@progress/kendo-angular-dropdowns";
     ReactiveFormsModule,
     LabelModule,
     DatePickerModule,
-    DropDownsModule
+    DropDownsModule,
+    SnotifyModule
   ],
   providers: [
     { provide: Logger, useClass: Logger},
     { provide: ColorService, useClass: ColorService },
-    { provide: AppSettingsToken, useClass: AppSettings}
+    { provide: AppSettingsToken, useClass: AppSettings},
+    SnotifyService
   ],
   bootstrap: [AppComponent]
 })
