@@ -6,7 +6,7 @@ input.ng-valid[required]
   border-left: 5px solid #42A948;
   /* green */ }
 
-input.ng-invalid:not(form) {
+input.ng-invalid.ng-touched:not(form) {
   border-left: 5px solid #a94442;
   /* red */ }
 
@@ -15,7 +15,7 @@ fieldset.ng-valid[required] > legend
   color: #42A948;
   /* green */ }
 
-fieldset.ng-invalid > {
+fieldset.ng-invalid > legend {
   color: #a94442;
   /* red */ }
 
