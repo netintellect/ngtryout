@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Address} from "../shared/models/address.model";
-import {SnotifyService} from "ng-snotify";
+//import {SnotifyService} from "ng-snotify";
 
 @Component({
   moduleId: module.id,
@@ -20,8 +20,7 @@ export class AddressComponent implements OnInit {
     { code: "us", description: "Verenigde Staten"}
   ];
   //#endregion
-  constructor(private formBuilder: FormBuilder,
-              private snotifyService: SnotifyService) {
+  constructor(private formBuilder: FormBuilder) {
   }
 
   ngOnInit() {
@@ -37,15 +36,7 @@ export class AddressComponent implements OnInit {
   }
 
   public reset(): void {
-    this.snotifyService.info(
-      'Do you want to reset the address info?',
-      'Address info',
-      {
-        timeout: 2000,
-        showProgressBar: true,
-        closeOnClick : true,
-        pauseOnHover: true
-      })
+
   }
 
   private createFormBindings(): void {
